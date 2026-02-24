@@ -1,0 +1,6 @@
+path,kind,required_by_stage,description
+data/raw/AllFields_Follow-up_Nov2025.csv,raw,severity_scale,Follow-up source extract
+data/raw/AllFields_Discharge_Nov2025.csv,raw,severity_scale,Discharge source extract
+data/raw/AllFields_Enrolment_Nov2025.csv,raw,severity_scale,Enrolment source extract
+data/raw/predictive.analysis.univariate_17Oct2024.xlsx,raw,severity_scale,Predictive analysis source workbook
+

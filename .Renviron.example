@@ -1,0 +1,4 @@
+D1_API_BASE_URL=https://sepsis-flow-d1-api.onrender.com
+D2_API_BASE_URL=https://sepsis-flow-platform.onrender.com
+LOCAL_PREVALENCE_TABLE_PATH=
+EVAL_MODE=api
