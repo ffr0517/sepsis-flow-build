@@ -103,15 +103,15 @@ sepsis-flow-build/
 │   ├── input_checks.R
 │   ├── packages.R
 │   └── path_utils.R
-├── 0_setup/                 # legacy setup helpers retained for compatibility/minimal edits
+├── 0_setup/  
 ├── config/
 │   ├── defaults.yml
 │   ├── pipeline_manifest.csv
 │   └── required_inputs_manifest.csv
 ├── data/
-│   ├── raw/                 # placeholder/raw source files live here
-│   ├── processed/           # generated pipeline datasets
-│   └── reference/           # generated prevalence lookup objects
+│   ├── raw/  # placeholder/raw source files live here
+│   ├── processed/  # generated pipeline datasets
+│   └── reference/  # generated prevalence lookup objects
 ├── outputs/
 │   ├── analysis/
 │   ├── evaluation/
@@ -149,8 +149,6 @@ sepsis-flow-build/
 ## Notes on Reproducibility
 
 - Seeds and reproducibility settings are initialized in `R/bootstrap.R`.
-- The legacy `0_setup/` files remain for compatibility/reference, but the staged scripts now source `R/bootstrap.R`.
-- Training/model case-weight logic has been removed from the current staged pipeline scripts (evaluation scoring weights are retained).
 
 ---
 

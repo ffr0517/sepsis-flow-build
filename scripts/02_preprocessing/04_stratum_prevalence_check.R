@@ -1,6 +1,4 @@
-# ----
-# Per-stratum prevalence check 
-# ----
+# Per-stratum prevalence check
 # Global settings ----
 source(here::here("R", "bootstrap.R"))
 
@@ -64,8 +62,12 @@ if (length(outcome_cols) != 10) {
 }
 
 to_case01 <- function(y) {
-  if (is.logical(y)) return(as.integer(y))
-  if (is.numeric(y)) return(as.integer(y == 1))
+  if (is.logical(y)) {
+    return(as.integer(y))
+  }
+  if (is.numeric(y)) {
+    return(as.integer(y == 1))
+  }
   if (is.factor(y)) y <- as.character(y)
   y <- trimws(tolower(as.character(y)))
   as.integer(y %in% c("1", "yes", "y", "true", "case"))
@@ -74,14 +76,14 @@ to_case01 <- function(y) {
 calc_prev_by_stratum <- function(data, outcome_col, stratum_col = "stratum") {
   y_raw <- data[[outcome_col]]
   s <- data[[stratum_col]]
-  
+
   y <- to_case01(y_raw)
   keep <- !is.na(y) & !is.na(s)
-  
+
   cases <- tapply(y[keep], s[keep], sum)
   n <- tapply(y[keep], s[keep], length)
   prev <- cases / n
-  
+
   out <- data.frame(
     stratum = names(n),
     n = as.integer(n),
@@ -89,7 +91,7 @@ calc_prev_by_stratum <- function(data, outcome_col, stratum_col = "stratum") {
     prevalence = as.numeric(prev[names(n)]),
     row.names = NULL
   )
-  
+
   out[order(out$stratum), ]
 }
 
@@ -100,7 +102,7 @@ names(prev_tables) <- outcome_cols
 for (col in outcome_cols) {
   tbl <- calc_prev_by_stratum(df, col, "stratum")
   prev_tables[[col]] <- tbl
-  
+
   cat("\n====================\n", col, "\n====================\n", sep = "")
   print(tbl, row.names = FALSE)
 }
@@ -126,9 +128,9 @@ write.csv(
 )
 
 cat("\nSaved:\n",
-    "- ", file.path(save_dir, "prevalence_by_stratum_tables.rds"), "\n",
-    "- ", file.path(save_dir, "prevalence_by_stratum_long.csv"), "\n",
-    sep = ""
+  "- ", file.path(save_dir, "prevalence_by_stratum_tables.rds"), "\n",
+  "- ", file.path(save_dir, "prevalence_by_stratum_long.csv"), "\n",
+  sep = ""
 )
 
 # ----
@@ -152,7 +154,7 @@ names(prev_ip_tables) <- outcome_cols
 for (col in outcome_cols) {
   tbl <- calc_prev_by_stratum(df, col, "ip_status")
   prev_ip_tables[[col]] <- tbl
-  
+
   cat("\n====================\n", col, "(by inpatient status)\n====================\n", sep = "")
   print(tbl, row.names = FALSE)
 }
@@ -179,9 +181,9 @@ write.csv(
 )
 
 cat("\nSaved:\n",
-    "- ", file.path(save_dir, "prevalence_by_inpatient_status_tables.rds"), "\n",
-    "- ", file.path(save_dir, "prevalence_by_inpatient_status_long.csv"), "\n",
-    sep = ""
+  "- ", file.path(save_dir, "prevalence_by_inpatient_status_tables.rds"), "\n",
+  "- ", file.path(save_dir, "prevalence_by_inpatient_status_long.csv"), "\n",
+  sep = ""
 )
 
 # ----
@@ -199,7 +201,7 @@ names(prev_country_tables) <- outcome_cols
 for (col in outcome_cols) {
   tbl <- calc_prev_by_stratum(df, col, "country")
   prev_country_tables[[col]] <- tbl
-  
+
   cat("\n====================\n", col, "(by country)\n====================\n", sep = "")
   print(tbl, row.names = FALSE)
 }
@@ -227,9 +229,9 @@ write.csv(
 )
 
 cat("\nSaved:\n",
-    "- ", file.path(save_dir, "prevalence_by_country_tables.rds"), "\n",
-    "- ", file.path(save_dir, "prevalence_by_country_long.csv"), "\n",
-    sep = ""
+  "- ", file.path(save_dir, "prevalence_by_country_tables.rds"), "\n",
+  "- ", file.path(save_dir, "prevalence_by_country_long.csv"), "\n",
+  sep = ""
 )
 
 # ----
@@ -240,11 +242,11 @@ calc_prev_whole_cohort <- function(data, outcome_col) {
   y_raw <- data[[outcome_col]]
   y <- to_case01(y_raw)
   keep <- !is.na(y)
-  
+
   cases <- sum(y[keep])
   n <- sum(keep)
   prev <- cases / n
-  
+
   data.frame(
     stratum = "Whole cohort",
     n = as.integer(n),
@@ -261,7 +263,7 @@ names(prev_whole_tables) <- outcome_cols
 for (col in outcome_cols) {
   tbl <- calc_prev_whole_cohort(df, col)
   prev_whole_tables[[col]] <- tbl
-  
+
   cat("\n====================\n", col, "(whole cohort)\n====================\n", sep = "")
   print(tbl, row.names = FALSE)
 }
@@ -288,9 +290,9 @@ write.csv(
 )
 
 cat("\nSaved:\n",
-    "- ", file.path(save_dir, "prevalence_whole_cohort_tables.rds"), "\n",
-    "- ", file.path(save_dir, "prevalence_whole_cohort_long.csv"), "\n",
-    sep = ""
+  "- ", file.path(save_dir, "prevalence_whole_cohort_tables.rds"), "\n",
+  "- ", file.path(save_dir, "prevalence_whole_cohort_long.csv"), "\n",
+  sep = ""
 )
 
 # ----
@@ -314,6 +316,6 @@ saveRDS(
 )
 
 cat("\nSaved:\n",
-    "- ", file.path(save_dir, "prevalence_all_nested.rds"), "\n",
-    sep = ""
+  "- ", file.path(save_dir, "prevalence_all_nested.rds"), "\n",
+  sep = ""
 )
