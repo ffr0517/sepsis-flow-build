@@ -44,7 +44,7 @@ get_option <- function(cli_opts, cli_key, env_key, default = NULL) {
 }
 
 # Config ----
-save_dir <- PATHS$outputs_evaluation
+save_dir <- PATHS$results_evaluation
 save_dir <- path.expand(save_dir)
 dir.create(save_dir, recursive = TRUE, showWarnings = FALSE)
 

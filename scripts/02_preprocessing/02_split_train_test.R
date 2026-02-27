@@ -198,5 +198,5 @@ write_rds(
 # Saving raw balance check table ----
 write_rds(
   balance_check_all,
-  file.path(PATHS$outputs, "split_balance_check_table_raw.rds")
+  file.path(PATHS$tables_preprocessing, "split_balance_check_table_raw.rds")
 )

@@ -508,7 +508,7 @@ test_subset <- test_data[1:50, ]
 # --- Level 5 (non-bolused IV fluids) ----
 # Type 1 
 build_type1_bundle_1to40 <- function(
-    head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L5", "models"),
+    head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L5", "models"),
     head_indices = 1:40,
     head_prefix = "head_",
     head_suffix = ".rds"
@@ -552,13 +552,13 @@ build_type1_bundle_1to40 <- function(
 }
 
 bundle_type1_heads_1to40 <- build_type1_bundle_1to40(
-  head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L5", "models"),
+  head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L5", "models"),
   head_indices = 1:40
 )
 
 # Type 2 
 build_type2_bundle_41to80 <- function(
-    head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L5", "models"),
+    head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L5", "models"),
     head_indices = 41:80,
     head_prefix = "head_",
     head_suffix = ".rds"
@@ -605,7 +605,7 @@ build_type2_bundle_41to80 <- function(
 }
 
 bundle_type2_heads_41to80 <- build_type2_bundle_41to80(
-  head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L5", "models"),
+  head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L5", "models"),
   head_indices = 41:80
 )
 
@@ -720,7 +720,7 @@ predict_type3_manual <- function(new_data, preprocess, model_minimal) {
 }
 
 build_type3_bundle_81to120 <- function(
-    head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L5", "models"),
+    head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L5", "models"),
     head_indices = 81:120,
     head_prefix = "head_",
     head_suffix = ".rds"
@@ -749,7 +749,7 @@ build_type3_bundle_81to120 <- function(
 
 # Build + size audit 
 bundle_type3_heads_81to120 <- build_type3_bundle_81to120(
-  head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L5", "models"),
+  head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L5", "models"),
   head_indices = 81:120
 )
 
@@ -816,7 +816,7 @@ head(summary_df, 10)
 # --- Level 4 (O2 via face or nasal cannula) ----
 # Type 1 
 build_type1_bundle_1to40 <- function(
-    head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L4", "models"),
+    head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L4", "models"),
     head_indices = 1:40,
     head_prefix = "head_",
     head_suffix = ".rds"
@@ -860,13 +860,13 @@ build_type1_bundle_1to40 <- function(
 }
 
 bundle_type1_heads_1to40 <- build_type1_bundle_1to40(
-  head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L4", "models"),
+  head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L4", "models"),
   head_indices = 1:40
 )
 
 # Type 2 
 build_type2_bundle_41to80 <- function(
-    head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L4", "models"),
+    head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L4", "models"),
     head_indices = 41:80,
     head_prefix = "head_",
     head_suffix = ".rds"
@@ -913,13 +913,13 @@ build_type2_bundle_41to80 <- function(
 }
 
 bundle_type2_heads_41to80 <- build_type2_bundle_41to80(
-  head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L4", "models"),
+  head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L4", "models"),
   head_indices = 41:80
 )
 
 # Type 3 
 build_type3_bundle_81to120 <- function(
-    head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L4", "models"),
+    head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L4", "models"),
     head_indices = 81:120,
     head_prefix = "head_",
     head_suffix = ".rds"
@@ -948,7 +948,7 @@ build_type3_bundle_81to120 <- function(
 
 # Build + size audit 
 bundle_type3_heads_81to120 <- build_type3_bundle_81to120(
-  head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L4", "models"),
+  head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L4", "models"),
   head_indices = 81:120
 )
 
@@ -1006,7 +1006,7 @@ head(summary_df, 10)
 # --- Level 3 (ICU admission with clinical reason) ----
 # Type 1 
 build_type1_bundle_1to40 <- function(
-    head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L3", "models"),
+    head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L3", "models"),
     head_indices = 1:40,
     head_prefix = "head_",
     head_suffix = ".rds"
@@ -1050,13 +1050,13 @@ build_type1_bundle_1to40 <- function(
 }
 
 bundle_type1_heads_1to40 <- build_type1_bundle_1to40(
-  head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L3", "models"),
+  head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L3", "models"),
   head_indices = 1:40
 )
 
 # Type 2 
 build_type2_bundle_41to80 <- function(
-    head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L3", "models"),
+    head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L3", "models"),
     head_indices = 41:80,
     head_prefix = "head_",
     head_suffix = ".rds"
@@ -1103,13 +1103,13 @@ build_type2_bundle_41to80 <- function(
 }
 
 bundle_type2_heads_41to80 <- build_type2_bundle_41to80(
-  head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L3", "models"),
+  head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L3", "models"),
   head_indices = 41:80
 )
 
 # Type 3 
 build_type3_bundle_81to120 <- function(
-    head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L3", "models"),
+    head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L3", "models"),
     head_indices = 81:120,
     head_prefix = "head_",
     head_suffix = ".rds"
@@ -1138,7 +1138,7 @@ build_type3_bundle_81to120 <- function(
 
 # Build + size audit 
 bundle_type3_heads_81to120 <- build_type3_bundle_81to120(
-  head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L3", "models"),
+  head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L3", "models"),
   head_indices = 81:120
 )
 
@@ -1196,7 +1196,7 @@ head(summary_df, 10)
 # --- Level 2 (CPAP or IV fluid bolus) ----
 # Type 1 
 build_type1_bundle_1to40 <- function(
-    head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L2", "models"),
+    head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L2", "models"),
     head_indices = 1:40,
     head_prefix = "head_",
     head_suffix = ".rds"
@@ -1240,13 +1240,13 @@ build_type1_bundle_1to40 <- function(
 }
 
 bundle_type1_heads_1to40 <- build_type1_bundle_1to40(
-  head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L2", "models"),
+  head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L2", "models"),
   head_indices = 1:40
 )
 
 # Type 2 
 build_type2_bundle_41to80 <- function(
-    head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L2", "models"),
+    head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L2", "models"),
     head_indices = 41:80,
     head_prefix = "head_",
     head_suffix = ".rds"
@@ -1293,13 +1293,13 @@ build_type2_bundle_41to80 <- function(
 }
 
 bundle_type2_heads_41to80 <- build_type2_bundle_41to80(
-  head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L2", "models"),
+  head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L2", "models"),
   head_indices = 41:80
 )
 
 # Type 3 
 build_type3_bundle_81to120 <- function(
-    head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L2", "models"),
+    head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L2", "models"),
     head_indices = 81:120,
     head_prefix = "head_",
     head_suffix = ".rds"
@@ -1328,7 +1328,7 @@ build_type3_bundle_81to120 <- function(
 
 # Build + size audit 
 bundle_type3_heads_81to120 <- build_type3_bundle_81to120(
-  head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L2", "models"),
+  head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L2", "models"),
   head_indices = 81:120
 )
 
@@ -1386,7 +1386,7 @@ head(summary_df, 10)
 # --- Level 1 (mechanical ventilation, inotropes, or renal replacement therapy) ----
 # Type 1 
 build_type1_bundle_1to40 <- function(
-    head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L1", "models"),
+    head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L1", "models"),
     head_indices = 1:40,
     head_prefix = "head_",
     head_suffix = ".rds"
@@ -1430,13 +1430,13 @@ build_type1_bundle_1to40 <- function(
 }
 
 bundle_type1_heads_1to40 <- build_type1_bundle_1to40(
-  head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L1", "models"),
+  head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L1", "models"),
   head_indices = 1:40
 )
 
 # Type 2 
 build_type2_bundle_41to80 <- function(
-    head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L1", "models"),
+    head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L1", "models"),
     head_indices = 41:80,
     head_prefix = "head_",
     head_suffix = ".rds"
@@ -1483,13 +1483,13 @@ build_type2_bundle_41to80 <- function(
 }
 
 bundle_type2_heads_41to80 <- build_type2_bundle_41to80(
-  head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L1", "models"),
+  head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L1", "models"),
   head_indices = 41:80
 )
 
 # Type 3 
 build_type3_bundle_81to120 <- function(
-    head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L1", "models"),
+    head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L1", "models"),
     head_indices = 81:120,
     head_prefix = "head_",
     head_suffix = ".rds"
@@ -1518,7 +1518,7 @@ build_type3_bundle_81to120 <- function(
 
 # Build + size audit 
 bundle_type3_heads_81to120 <- build_type3_bundle_81to120(
-  head_dir = file.path(PATHS$outputs_exports, "sepsis-flow-D1-L1", "models"),
+  head_dir = file.path(PATHS$results_exports, "sepsis-flow-D1-L1", "models"),
   head_indices = 81:120
 )
 
@@ -1590,5 +1590,5 @@ bundle_day1 <- list(
   )
 )
 
-dir.create(dirname(file.path(PATHS$outputs_exports, "sepsis-flow-day1-treatments", "sepsis-flow-D1", "day1_bundle.rds")), recursive = TRUE, showWarnings = FALSE)
-saveRDS(bundle_day1, file.path(PATHS$outputs_exports, "sepsis-flow-day1-treatments", "sepsis-flow-D1", "day1_bundle.rds"), compress = "xz")
+dir.create(dirname(file.path(PATHS$results_exports, "day1_bundle.rds")), recursive = TRUE, showWarnings = FALSE)
+saveRDS(bundle_day1, file.path(PATHS$results_exports, "day1_bundle.rds"), compress = "xz")

@@ -29,6 +29,10 @@ get_sepsis_config <- function(config_path = NULL) {
   root <- here::here()
   data_root <- cfg$data_root %||% file.path(root, "data")
   outputs_root <- cfg$outputs_root %||% cfg$artifacts_root %||% file.path(root, "outputs")
+  outputs_results <- file.path(outputs_root, "results")
+  outputs_tables <- file.path(outputs_root, "tables")
+  outputs_figures <- file.path(outputs_root, "figures")
+  outputs_models <- file.path(outputs_root, "models")
 
   list(
     root = root,
@@ -40,16 +44,24 @@ get_sepsis_config <- function(config_path = NULL) {
       data_processed = file.path(data_root, "processed"),
       data_reference = file.path(data_root, "reference"),
       outputs_root = outputs_root,
-      outputs_intermediate = file.path(outputs_root, "intermediate"),
-      outputs_models = file.path(outputs_root, "models"),
-      outputs_analysis = file.path(outputs_root, "analysis"),
-      outputs_evaluation = file.path(outputs_root, "evaluation"),
-      outputs_exports = file.path(outputs_root, "exports"),
-      ensemble_workspace = file.path(outputs_root, "models", "ensemble_workspace"),
+      outputs_models = outputs_models,
+      outputs_results = outputs_results,
+      outputs_tables = outputs_tables,
+      outputs_figures = outputs_figures,
+      results_intermediate = file.path(outputs_results, "intermediate"),
+      results_analysis = file.path(outputs_results, "analysis"),
+      results_evaluation = file.path(outputs_results, "evaluation"),
+      results_exports = file.path(outputs_results, "exports"),
+      tables_preprocessing = file.path(outputs_tables, "preprocessing"),
+      tables_analysis = file.path(outputs_tables, "analysis"),
+      tables_evaluation = file.path(outputs_tables, "evaluation"),
+      figures_analysis = file.path(outputs_figures, "analysis"),
+      figures_evaluation = file.path(outputs_figures, "evaluation"),
+      ensemble_workspace = file.path(outputs_models, "ensemble_workspace"),
       prevalence_dir = file.path(data_root, "reference"),
-      eval_variant_truth = file.path(outputs_root, "evaluation", "prior_variant_results_D1_TRUTH"),
-      eval_variant_predicted = file.path(outputs_root, "evaluation", "prior_variant_results_D1_PREDICTED"),
-      eval_variant_comparison = file.path(outputs_root, "evaluation", "prior_variant_results_D1_COMPARISON")
+      eval_variant_truth = file.path(outputs_results, "evaluation", "prior_variant_results_D1_TRUTH"),
+      eval_variant_predicted = file.path(outputs_results, "evaluation", "prior_variant_results_D1_PREDICTED"),
+      eval_variant_comparison = file.path(outputs_results, "evaluation", "prior_variant_results_D1_COMPARISON")
     )
   )
 }

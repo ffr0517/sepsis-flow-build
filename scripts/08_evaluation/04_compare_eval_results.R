@@ -7,7 +7,7 @@ suppressPackageStartupMessages({
   library(dplyr)
 })
 
-save_dir <- PATHS$outputs_evaluation
+save_dir <- PATHS$results_evaluation
 save_dir <- path.expand(save_dir)
 
 truth_results_dir <- file.path(save_dir, "prior_variant_results_D1_TRUTH")

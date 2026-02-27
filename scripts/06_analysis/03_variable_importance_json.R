@@ -10,7 +10,7 @@ suppressPackageStartupMessages({
 
 # Paths ----
 varimp_dir <- PATHS$ensemble_workspace
-json_out_dir <- PATHS$outputs_analysis
+json_out_dir <- PATHS$results_analysis
 dir.create(json_out_dir, recursive = TRUE, showWarnings = FALSE)
 
 # Loading variable importance data ----

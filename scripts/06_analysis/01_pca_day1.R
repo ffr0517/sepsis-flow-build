@@ -2,8 +2,10 @@
 source(here::here("R", "bootstrap.R"))
 
 input_dir <- PATHS$ensemble_workspace
-save_dir <- PATHS$outputs_analysis
-dir.create(save_dir, recursive = TRUE, showWarnings = FALSE)
+table_dir <- PATHS$tables_analysis
+figure_dir <- PATHS$figures_analysis
+dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
+dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
 # Load variable importance data ----
 files <- list.files(
@@ -303,8 +305,8 @@ if (requireNamespace("ggrepel", quietly = TRUE)) {
 }
 
 
-out_path <- file.path(save_dir, "pca_d1_biplot.pdf")
+out_path <- file.path(figure_dir, "pca_d1_biplot.pdf")
 ggsave(out_path, p, width = 9, height = 6, device = "pdf", useDingbats = FALSE)
 
-saveRDS(pc_medians_by_treatment, file = file.path(save_dir, "d1_pc_medians_by_treatment.rds"))
-saveRDS(pc_table, file = file.path(save_dir, "d1_pc_table.rds"))
+saveRDS(pc_medians_by_treatment, file = file.path(table_dir, "d1_pc_medians_by_treatment.rds"))
+saveRDS(pc_table, file = file.path(table_dir, "d1_pc_table.rds"))

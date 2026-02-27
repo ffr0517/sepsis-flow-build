@@ -1,11 +1,11 @@
 # macOS
 .DS_Store
 
-# R session/user files
+# R session/local files
 .Rhistory
 .RData
-.Ruserdata
-.Rproj.user/
+.R*data
+.Rproj.*/
 
 # R environment/local libraries
 .Renviron
@@ -19,7 +19,7 @@ renv/staging/
 *.bak
 *.swp
 
-# Python cache (if used for local tooling)
+# Python cache
 __pycache__/
 *.pyc
 
@@ -28,7 +28,6 @@ __pycache__/
 .env.*
 
 # Data (raw/processed/reference)
-# Keep directory structure in Git, but do not commit real data files.
 data/raw/*
 data/processed/*
 data/reference/*
@@ -39,22 +38,27 @@ data/reference/*
 # Generated outputs
 outputs/*
 !outputs/.gitkeep
-!outputs/analysis/.gitkeep
-!outputs/evaluation/.gitkeep
-!outputs/exports/.gitkeep
-!outputs/intermediate/.gitkeep
+!outputs/models/
+!outputs/results/
+!outputs/tables/
+!outputs/figures/
+outputs/models/*
 !outputs/models/.gitkeep
+outputs/results/*
+!outputs/results/.gitkeep
+outputs/tables/*
+!outputs/tables/.gitkeep
+outputs/figures/*
+!outputs/figures/.gitkeep
 
-# Optional schema/output dumps generated during analysis
+# schema/output dumps generated during analysis
 *.rds
 *.Rds
 *.RDS
 
-# Keep tracked repository docs/config/scripts/code
+# tracked repository docs/config/scripts/code
 !README.md
 !config/**
 !R/**
 !scripts/**
 !schemas/**
-!0_setup/**
-

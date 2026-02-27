@@ -11,19 +11,21 @@ CONFIG <- get_sepsis_config(get_cli_option(CLI_OPTS, "config", here::here("confi
 PATHS <- list(
   raw = CONFIG$paths$data_raw,
   processed = CONFIG$paths$data_processed,
-  cv = file.path(CONFIG$root, "data", "cv"),
-  lab_sets = file.path(CONFIG$root, "data", "lab_sets"),
-  outputs = file.path(CONFIG$root, "outputs"),
-  figures = file.path(CONFIG$root, "outputs", "figures"),
-  tables = file.path(CONFIG$root, "outputs", "tables"),
+  outputs = CONFIG$paths$outputs_root,
+  figures = CONFIG$paths$outputs_figures,
+  tables = CONFIG$paths$outputs_tables,
   models = CONFIG$paths$outputs_models,
-  results = file.path(CONFIG$root, "outputs", "results"),
+  results = CONFIG$paths$outputs_results,
   data_reference = CONFIG$paths$data_reference,
-  outputs_intermediate = CONFIG$paths$outputs_intermediate,
-  outputs_models = CONFIG$paths$outputs_models,
-  outputs_analysis = CONFIG$paths$outputs_analysis,
-  outputs_evaluation = CONFIG$paths$outputs_evaluation,
-  outputs_exports = CONFIG$paths$outputs_exports,
+  results_intermediate = CONFIG$paths$results_intermediate,
+  results_analysis = CONFIG$paths$results_analysis,
+  results_evaluation = CONFIG$paths$results_evaluation,
+  results_exports = CONFIG$paths$results_exports,
+  tables_preprocessing = CONFIG$paths$tables_preprocessing,
+  tables_analysis = CONFIG$paths$tables_analysis,
+  tables_evaluation = CONFIG$paths$tables_evaluation,
+  figures_analysis = CONFIG$paths$figures_analysis,
+  figures_evaluation = CONFIG$paths$figures_evaluation,
   ensemble_workspace = CONFIG$paths$ensemble_workspace,
   prevalence_dir = CONFIG$paths$prevalence_dir,
   eval_variant_truth = CONFIG$paths$eval_variant_truth,
@@ -34,15 +36,13 @@ PATHS <- list(
 ensure_dirs(list(
   PATHS$raw, PATHS$processed, PATHS$data_reference,
   PATHS$outputs, PATHS$figures, PATHS$tables, PATHS$models, PATHS$results,
-  PATHS$outputs_intermediate, PATHS$outputs_models, PATHS$outputs_analysis,
-  PATHS$outputs_evaluation, PATHS$outputs_exports, PATHS$ensemble_workspace,
+  PATHS$results_intermediate, PATHS$results_analysis, PATHS$results_evaluation, PATHS$results_exports,
+  PATHS$tables_preprocessing, PATHS$tables_analysis, PATHS$tables_evaluation,
+  PATHS$figures_analysis, PATHS$figures_evaluation, PATHS$ensemble_workspace,
   PATHS$eval_variant_truth, PATHS$eval_variant_predicted, PATHS$eval_variant_comparison
 ))
 
 source(here::here("R", "packages.R"))
-if (file.exists(here::here("0_setup", "3_functions.R"))) {
-  source(here::here("0_setup", "3_functions.R"))
-}
 
 GLOBALS <- list(seed = 202504, seed2 = 202601)
 set.seed(GLOBALS$seed)
